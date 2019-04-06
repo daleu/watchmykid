@@ -1,15 +1,15 @@
 <br>
     <p align="center">
-        <img alt="WatchYourKid" src="./client/watchmykid-client/public/binoculars.png" style="width:100px"/>
+        <img alt="watchmykid" src="./client/watchmykid-client/public/binoculars.png" style="width:100px;"/>
     </p>
 <br>
 
-[![HitCount](http://hits.dwyl.io/daleu/watchyourkid.svg)](http://hits.dwyl.io/daleu/watchyourkid)
-[![GitHub stars](https://img.shields.io/github/stars/daleu/watchyourkid.svg)](https://GitHub.com/daleu/watchyourkid/stargazers/)
-[![GitHub forks](https://img.shields.io/github/forks/daleu/watchyourkid.svg)](https://GitHub.com/daleu/watchyourkid/network/)
-[![GitHub repo size in bytes](https://img.shields.io/github/repo-size/daleu/watchyourkid.svg)](https://github.com/daleu/watchyourkid)
-[![GitHub contributors](https://img.shields.io/github/contributors/daleu/watchyourkid.svg)](https://GitHub.com/daleu/watchyourkid/graphs/contributors/)
-[![GitHub license](https://img.shields.io/github/license/daleu/watchyourkid.svg)](https://github.com/daleu/watchyourkid/blob/master/LICENSE)
+[![HitCount](http://hits.dwyl.io/daleu/watchmykid.svg)](http://hits.dwyl.io/daleu/watchmykid)
+[![GitHub stars](https://img.shields.io/github/stars/daleu/watchmykid.svg)](https://GitHub.com/daleu/watchmykid/stargazers/)
+[![GitHub forks](https://img.shields.io/github/forks/daleu/watchmykid.svg)](https://GitHub.com/daleu/watchmykid/network/)
+[![GitHub repo size in bytes](https://img.shields.io/github/repo-size/daleu/watchmykid.svg)](https://github.com/daleu/watchmykid)
+[![GitHub contributors](https://img.shields.io/github/contributors/daleu/watchmykid.svg)](https://GitHub.com/daleu/watchmykid/graphs/contributors/)
+[![GitHub license](https://img.shields.io/github/license/daleu/watchmykid.svg)](https://github.com/daleu/watchmykid/blob/master/LICENSE)
 
 🔑 Be aware of your kids internet navigation
 
@@ -41,4 +41,4 @@ All this system is finally deployed in a [Google Cloud VM](https://cloud.google.
 
 ## License
 
-MIT © WatchYourKid
+MIT © WatchMyKid
