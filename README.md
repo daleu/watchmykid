@@ -1,6 +1,6 @@
 <br>
     <p align="center">
-        <img alt="WatchYourKid" src="./client/public/binoculars.png" width="50%"/>
+        <img alt="WatchYourKid" src="./client/watchmykid-client/public/binoculars.png" width="50%"/>
     </p>
 <br>
 
