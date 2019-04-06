@@ -10,56 +10,28 @@ servers:
     description: Localhost endpoint.
 
 tags:
-  - name: user
-    description: endpoint for managing user options.
+#  - name: user
+#    description: endpoint for managing user options.
   - name: manage
     description: endpoint to check if some content is correct for kids
 
 
 
 paths:
-  /user:
-    get:
-      tags:
-        - user
-      summary: Retrieve user Information
-      description: Invoke this endpoint to retrieve information of a given user.
-      operationId: src.api.help.get
-      parameters:
-        - name: user_id
-          in: query
-          description: Specifies the user to retrieve.
-          required: true
-          schema:
-            type: integer
-      responses:
-        200:
-          description: Standard WatchMyKid API JSON response. You should check the `error` attribute to determine if there was an error.
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/APIResponse'
-        default:
-          description: Unexpected error.
-          content:
-            application/text:
-              schema:
-                type: string
-                description: Error description.
-#  /help:
-#    post:
+#  /user:
+#    get:
 #      tags:
-#        - help
-#      summary: Checks if a webpage is correct for kids
-#      description: Invoke this endpoint to retrieve information of which help a user needs.
-#      operationId: src.api.help.post
-#      requestBody:
-#        required: true
-#        description: Body wrapper for the request.
-#        content:
-#          application/json:
-#            schema:
-#              $ref: "#/components/schemas/PageToCheck"
+#        - user
+#      summary: Retrieve user Information
+#      description: Invoke this endpoint to retrieve information of a given user.
+#      operationId: src.api.help.get
+#      parameters:
+#        - name: user_id
+#          in: query
+#          description: Specifies the user to retrieve.
+#          required: true
+#          schema:
+#            type: integer
 #      responses:
 #        200:
 #          description: Standard WatchMyKid API JSON response. You should check the `error` attribute to determine if there was an error.
@@ -74,6 +46,34 @@ paths:
 #              schema:
 #                type: string
 #                description: Error description.
+  /manage:
+    post:
+      tags:
+        - manage
+      summary: Checks if a webpage is correct for kids
+      description: Invoke this endpoint to retrieve information of which help a user needs.
+      operationId: src.api.help.post
+      requestBody:
+        required: true
+        description: Body wrapper for the request.
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/PageToCheck"
+      responses:
+        200:
+          description: Standard WatchMyKid API JSON response. You should check the `error` attribute to determine if there was an error.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/APIResponse'
+        default:
+          description: Unexpected error.
+          content:
+            application/text:
+              schema:
+                type: string
+                description: Error description.
 
 components:
   schemas:
@@ -96,6 +96,9 @@ components:
         page_html:
           type: string
           description: Page HTML to scrape.
-        user_id:
-          type: integer
-          description: User identifier.
+        tlf:
+          type: string
+          description: Telephone number to inform
+        url:
+          type: string
+          description: Url to check

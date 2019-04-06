@@ -2,7 +2,7 @@ import logging
 import sys
 
 
-__logger_stdout = logging.getLogger('unstuckoverflow_api')
+__logger_stdout = logging.getLogger('watch_my_kid_api')
 
 __formatter = logging.Formatter('{%(name)s} - <%(asctime)s> - [%(levelname)-7s] - %(message)s')
 
