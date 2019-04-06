@@ -1,8 +1,8 @@
-<!-- <br>
-<p align="center">
-  <img alt="UnstuckOverflow" src="./client/public/unstuckoverflow-logo-without.png" width="50%"/>
-</p>
-<br> -->
+<br>
+    <p align="center">
+        <img alt="WatchYourKid" src="./client/public/binoculars.png" width="50%"/>
+    </p>
+<br>
 
 [![HitCount](http://hits.dwyl.io/daleu/watchyourkid.svg)](http://hits.dwyl.io/daleu/watchyourkid)
 [![GitHub stars](https://img.shields.io/github/stars/daleu/watchyourkid.svg)](https://GitHub.com/daleu/watchyourkid/stargazers/)
@@ -30,7 +30,7 @@ At frontend, there's a Chrome extension made with [React](https://reactjs.org/) 
 In the backend, we have a [Python 3.6+](https://www.python.org/downloads/release/python-372/) application which runs with [Flask](http://flask.pocoo.org/) and uses [OpenAPI](https://swagger.io/docs/specification/about/) and [Connexion](https://connexion.readthedocs.io/en/latest/) library) to generate a bunch of endpoints and connect the frontend with the backend.
 In addition, we are using [Cognitive Services](https://azure.microsoft.com/en-us/services/cognitive-services/) service from [Azure](https://azure.microsoft.com/en-us/).
 
-In order to communicate with the users, we've used [Nexmo]'s API, which allow us to work with SMS technology 
+In order to communicate with the users, we've used [Nexmo](https://www.nexmo.com)'s API, which allow us to work with SMS technology 
 
 All this system is finally deployed in a [Google Cloud VM](https://cloud.google.com/compute/docs/instances/).
 
