@@ -8,8 +8,11 @@ import FormHelperText from '@material-ui/core/FormHelperText';
 import Switch from '@material-ui/core/Switch';
 import TextField from '@material-ui/core/TextField';
 import '../../styles.css';
+import { Storage } from '../../utils/storage';
 
 class ConfigPage extends React.Component<{}, IConfigPageState> {
+
+    private chrome: any;
 
     constructor(props:any){
         super(props);
@@ -55,21 +58,56 @@ class ConfigPage extends React.Component<{}, IConfigPageState> {
     }
 
     public componentDidMount(){
-        let itemString:any = localStorage.getItem('watchmykid');
-        console.log("item",itemString);
-        if(itemString==null){
-            this.setState({
-                active: false,
-                mobilenumber: ''
-            });
-        }
-        else{
-            let item:IConfigPageState =  JSON.parse(itemString || '{}');
-            this.setState({
-                active: item.active,
-                mobilenumber: item.mobilenumber
-            });
-        }
+
+        // this.chrome.storage.local.get(['watchmykid'], (itemString:any) => {
+        //     console.log("item",itemString);
+        //     if(itemString==null){
+        //         this.setState({
+        //             active: false,
+        //             mobilenumber: ''
+        //         });
+        //     }
+        //     else{
+        //         let item:IConfigPageState =  JSON.parse(itemString || '{}');
+        //         this.setState({
+        //             active: item.active,
+        //             mobilenumber: item.mobilenumber
+        //         });
+        //     }
+        // });
+
+        Storage.get((item:any) => {
+            console.log("PROVA",item);
+            if(item==null){
+                this.setState({
+                    active: false,
+                    mobilenumber: ''
+                });
+            }
+            else{
+                let itemAux:IConfigPageState =  item.watchmykid
+                this.setState({
+                    active: itemAux.active,
+                    mobilenumber: itemAux.mobilenumber
+                });
+            }
+        });
+
+        // let itemString:any = localStorage.getItem('watchmykid');
+        // console.log("item",itemString);
+        // if(itemString==null){
+        //     this.setState({
+        //         active: false,
+        //         mobilenumber: ''
+        //     });
+        // }
+        // else{
+        //     let item:IConfigPageState =  JSON.parse(itemString || '{}');
+        //     this.setState({
+        //         active: item.active,
+        //         mobilenumber: item.mobilenumber
+        //     });
+        // }
     }
 
     handleChange = (event:any)=>{
@@ -78,15 +116,11 @@ class ConfigPage extends React.Component<{}, IConfigPageState> {
             active: !this.state.active,
             mobilenumber: this.state.mobilenumber
         }
+
+        Storage.set(stateAux);
+
         localStorage.setItem('watchmykid',JSON.stringify(stateAux));
     }
-
-    // handleChange(e: any){
-    //     this.setState({active:!this.state.active}).then(()=>{
-            
-    //     })
-    //     localStorage.setItem('watchmykid',JSON.stringify(this.state));
-    // }
 
     mobileChanged(e: any){
         this.setState({mobilenumber: e.target.value});
