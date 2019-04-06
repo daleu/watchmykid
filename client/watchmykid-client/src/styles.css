@@ -1,0 +1,15 @@
+.container{
+  width: 300px;
+  height: 200px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.form{
+  margin-top: 20px;
+}
+
+.form_title{
+  font-weight: 700;
+  color: black;
+}
