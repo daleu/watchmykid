@@ -1,0 +1,10 @@
+connexion[swagger-ui]
+Flask
+Flask-Cors
+uWSGI
+uwsgitop
+requests
+SQLAlchemy
+psycopg2-binary
+nexmo
+beautifulsoup4
