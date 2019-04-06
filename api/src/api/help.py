@@ -22,13 +22,22 @@ def get():
 def post():
     try:
         body = request.json
-        required_parameters = ['page_html', 'tlf']
+        required_parameters = ['page_html', 'tlf', 'url']
         if not all(x in body for x in required_parameters):
             return jsonify(error=True, message='All request body parameters are required.'), 400
 
         soup = BeautifulSoup(body['page_html'], 'html.parser')
-        image_url = list(set([img.src for img in soup.find_all('img')]))
-        response = 'hola'
+        images = list(set([img.get('src') for img in soup.find_all('img') if img.get('src')]))
+
+        for img in images:
+            data = computerVision.analyze(img)
+            if data and (data['isAdultContent'] or data['isRacyContent']):
+                print('Hi ha contingut inapropiat')
+                message = 'Watch out, your kid has entered a webpage with inapropiate content. Link to the web {}'\
+                    .format(body['url'])
+                nexmo.send_sms('WatchMyKid', body['tlf'], message)
+                break
+        response = 'Ok'
         return jsonify(error=False, response=response), 200
     except Exception as e:
         log.error('Unexpected error in POST/help: {}'.format(e))

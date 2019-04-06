@@ -99,3 +99,6 @@ components:
         tlf:
           type: string
           description: Telephone number to inform
+        url:
+          type: string
+          description: Url to check
