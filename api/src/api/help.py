@@ -5,18 +5,18 @@ from src.services import nexmo, computerVision
 from src.util import log
 
 
-def get():
-    try:
-        # nexmo_message = 'Hey there'
-        # nexmo.send_sms('WatchMyKid', '+34666349989', nexmo_message)
-
-        computerVision.analyze('https://cdn-images-1.medium.com/max/800/1*FY02C6JfeUMNvh8AnTr0uA.jpeg')
-
-        response = 'You made it'
-        return jsonify(error=False, response=response), 200
-    except Exception as e:
-        log.error('Unexpected error in GET/user: {}'.format(e))
-        return jsonify(error=True, message='Unexpected error.'), 400
+# def get():
+#     try:
+#         # nexmo_message = 'Hey there'
+#         # nexmo.send_sms('WatchMyKid', '+34666349989', nexmo_message)
+#
+#         computerVision.analyze('https://cdn-images-1.medium.com/max/800/1*FY02C6JfeUMNvh8AnTr0uA.jpeg')
+#
+#         response = 'You made it'
+#         return jsonify(error=False, response=response), 200
+#     except Exception as e:
+#         log.error('Unexpected error in GET/user: {}'.format(e))
+#         return jsonify(error=True, message='Unexpected error.'), 400
 
 
 def post():
