@@ -32,12 +32,10 @@ In addition, we are using [Cognitive Services](https://azure.microsoft.com/en-us
 
 In order to communicate with the users, we've used [Nexmo](https://www.nexmo.com)'s API, which allow us to work with SMS technology 
 
-All this system is finally deployed in a [Google Cloud VM](https://cloud.google.com/compute/docs/instances/).
-
 ## Challenges we ran into
-We have been working in some new technologies, like Azure Cognitive Services and Google Cloud.
+We have been working in some new technologies, like Azure Cognitive Services .
 
-We have used React to create the Chrome extension, that it was connected to Google Cloud. 
+We have used React to create the Chrome extension, that it was connected a flask API. 
 
 We also had some troubles to get a domain from domain.com, so we ended up hosting our static web page on Github Pages.
 
