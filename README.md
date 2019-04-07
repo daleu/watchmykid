@@ -34,6 +34,25 @@ In order to communicate with the users, we've used [Nexmo](https://www.nexmo.com
 
 All this system is finally deployed in a [Google Cloud VM](https://cloud.google.com/compute/docs/instances/).
 
+## Challenges we ran into
+We have been working in some new technologies, like Azure Cognitive Services and Google Cloud.
+
+We have used React to create the Chrome extension, that it was connected to Google Cloud. 
+
+We also had some troubles to get a domain from domain.com, so we ended up hosting our static web page on Github Pages.
+
+## Accomplishments that we're proud of
+
+We have created a project that can help parents to keep their kids save from the internet content. They will be notified with the potential dangerous URL of the page that the kids are visiting.
+
+## What we learned
+
+We have learned to create a Chrome extension with react and use Azure Cognitive Services to classify images depending on their content.
+
+## What's next for WatchMyKid
+
+This app can be extended in many ways. One of them, can be to block the page access when it's content is potentially dangerous.
+
 ## Authors
 
 - [David Aleu](https://github.com/daleu)
