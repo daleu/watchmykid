@@ -12,7 +12,7 @@ import { Storage } from '../../utils/storage';
 
 class ConfigPage extends React.Component<{}, IConfigPageState> {
 
-    private chrome: any;
+    private rejex:RegExp;
 
     constructor(props:any){
         super(props);
@@ -22,6 +22,7 @@ class ConfigPage extends React.Component<{}, IConfigPageState> {
             mobilenumber: ''
         }
 
+        this.rejex = new RegExp('^\\+[1-9]{1}[0-9]{3,14}$');
     }
 
     public render() {
@@ -34,7 +35,6 @@ class ConfigPage extends React.Component<{}, IConfigPageState> {
                     label="Mobile Number"
                     value={this.state.mobilenumber}
                     onChange={this.mobileChanged.bind(this)}
-                    type="number"
                     InputLabelProps={{
                         shrink: true,
                     }}
@@ -46,7 +46,7 @@ class ConfigPage extends React.Component<{}, IConfigPageState> {
                         <Switch
                             checked={this.state.active}
                             onChange={this.handleChange.bind(this)}
-                            disabled={!(this.state.mobilenumber.length==9)}
+                            disabled={!(this.rejex.test(this.state.mobilenumber))}
                             />
                     }
                     label="Active"
@@ -58,23 +58,6 @@ class ConfigPage extends React.Component<{}, IConfigPageState> {
     }
 
     public componentDidMount(){
-
-        // this.chrome.storage.local.get(['watchmykid'], (itemString:any) => {
-        //     console.log("item",itemString);
-        //     if(itemString==null){
-        //         this.setState({
-        //             active: false,
-        //             mobilenumber: ''
-        //         });
-        //     }
-        //     else{
-        //         let item:IConfigPageState =  JSON.parse(itemString || '{}');
-        //         this.setState({
-        //             active: item.active,
-        //             mobilenumber: item.mobilenumber
-        //         });
-        //     }
-        // });
 
         Storage.get((item:any) => {
             console.log("PROVA",item);
@@ -93,21 +76,6 @@ class ConfigPage extends React.Component<{}, IConfigPageState> {
             }
         });
 
-        // let itemString:any = localStorage.getItem('watchmykid');
-        // console.log("item",itemString);
-        // if(itemString==null){
-        //     this.setState({
-        //         active: false,
-        //         mobilenumber: ''
-        //     });
-        // }
-        // else{
-        //     let item:IConfigPageState =  JSON.parse(itemString || '{}');
-        //     this.setState({
-        //         active: item.active,
-        //         mobilenumber: item.mobilenumber
-        //     });
-        // }
     }
 
     handleChange = (event:any)=>{
@@ -118,8 +86,6 @@ class ConfigPage extends React.Component<{}, IConfigPageState> {
         }
 
         Storage.set(stateAux);
-
-        localStorage.setItem('watchmykid',JSON.stringify(stateAux));
     }
 
     mobileChanged(e: any){

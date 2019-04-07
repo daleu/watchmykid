@@ -51,9 +51,11 @@ chrome.storage.local.get(['watchmykid'], (item) => {
     };
 
     console.log("NOT NULL 4");
-    xhr.send(JSON.stringify({
-        page_html: markup,
-        tlf: "+34606953209",
-        url: window.location.href
-    }));
+    if(item.watchmykid.active){
+        xhr.send(JSON.stringify({
+            page_html: markup,
+            tlf: mobile,
+            url: window.location.href
+        }));
+    }
 });
